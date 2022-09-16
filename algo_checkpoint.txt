@@ -1,0 +1,19 @@
+Algorithm Sentence
+VAR 
+    s: STRING 
+    a,b,c:=0 : integer
+    vowels: ARRAY OF string
+BEGIN 
+    write("Enter your sentence")
+    read(s)
+    a:= s.length()
+    write("lenght of your sentence is " + a)
+    b:= s.trim().split(/\s+/).length
+    write("your sentence countains" +b + "words")
+    vowels := ['a','e','i','o','u']
+    FOR CHAR OF s DO
+        IF (vowels.includes(CHAR)) {
+            c++
+        }
+    write("Your sentence contains"+ c + "vowels")
+END
