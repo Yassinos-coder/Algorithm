@@ -1,0 +1,112 @@
+ALGORITHM checkpoint
+solution 1
+
+a : ARRAY_OF integer[a]
+b : ARRAY_OF integer[b]
+i , p : INTEGER
+sum = 0 : INTEGER
+temp : INTEGER
+BEGIN
+FOR i FROM 0 TO a.lenght-1 STEP 1 DO
+    temp = 0
+    FOR p FROM 0 TO b.lenght-1 STEP 1 DO
+    if(a[i] = b[p])
+    temp = temp+1
+    ENDIF
+    ENDFOR
+    if(temp = 0) sum=sum+a[i]
+    ENDIF
+ENDFOR
+FOR p FROM 0 TO b.lenght-1 STEP 1 DO
+    temp = 0
+    FOR i FROM 0 TO a.lenght-1 STEP 1 DO
+    if(b[p] = a[i])
+    temp = temp+1
+    ENDIF
+    ENDFOR
+    if(temp = 0) sum=sum+b[p]
+    ENDIF
+ENDFOR
+
+
+
+
+htab : HASH_table<INTEGER,INTEGER>
+a:ARRAY_OF INTEGER[a]
+b:ARRAY_OF INTEGER[b]
+i : INTEGER
+sum = 0 : INTEGER
+count = 0 : INTEGER
+FOR i from 0 to a.length-1 STEP 1 DO
+    if(htab.lookup(a[i])= true)
+        count = htab.get(a[i])
+        htab.insert(a[i],count+1)
+    else
+        htab.insert(a[i],1)
+ENDFOR
+FOR i from 0 to b.length-1 STEP 1 DO
+    if(htab.lookup(b[i])= true)
+        count = htab.get(b[i])
+        htab.insert(b[i],count+1)
+    else
+    htab.insert(b[i],1)
+ENDFOR
+FOR i FROM 0 to a.lenght-1 STEP 1 DO
+    if(htab.get(a[i])= 1 )
+    sum = sum +a[i]
+    ENDIF
+ENDFOR
+FOR i FROM 0 to b.lenght-1 STEP 1 DO
+    if(htab.get(b[i])= 1 )
+    sum = sum +b[i]
+    ENDIF
+ENDFOR
+write(sum)
+
+
+
+
+a : ARRAY_OF integer[a]
+b : ARRAY_OF integer[b]
+i , p : INTEGER
+sum = 0 : INTEGER
+BEGIN
+FOR i FROM 0 TO a.lenght-1 STEP 1 DO
+    FOR p FROM 0 TO b.lenght-1 STEP 1 DO
+    if(a[i] = b[p])
+    sum = sum + a[i] + b[p]
+    ENDIF
+    ENDFOR
+ENDFOR
+END
+
+
+
+
+htab : HASH_table<INTEGER,INTEGER>
+a:ARRAY_OF INTEGER[a]
+b:ARRAY_OF INTEGER[b]
+i : INTEGER
+sum = 0 : INTEGER
+count = 0 : INTEGER
+FOR i from 0 to a.length-1 STEP 1 DO
+    if(htab.lookup(a[i])= true)
+        count = htab.get(a[i])
+        htab.insert(a[i],count+1)
+    else
+        htab.insert(a[i],1)
+ENDFOR
+FOR i from 0 to b.length-1 STEP 1 DO
+    if(htab.lookup(b[i])= true)
+        count = htab.get(b[i])
+        htab.insert(b[i],count+1)
+    else
+    htab.insert(b[i],1)
+ENDFOR
+FOR i FROM 0 to a.lenght-1 STEP 1 DO
+    if(htab.get(a[i])> 1 )
+    sum = sum +a[i]
+    sum = sum*2
+    ENDIF
+ENDFOR
+write(sum)
