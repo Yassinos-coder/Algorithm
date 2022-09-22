@@ -27,7 +27,7 @@ FOR p FROM 0 TO b.lenght-1 STEP 1 DO
     if(temp = 0) sum=sum+b[p]
     ENDIF
 ENDFOR
-
+write(sum)
 
 
 
@@ -80,7 +80,7 @@ FOR i FROM 0 TO a.lenght-1 STEP 1 DO
 ENDFOR
 END
 
-
+write(sum)
 
 
 htab : HASH_table<INTEGER,INTEGER>
