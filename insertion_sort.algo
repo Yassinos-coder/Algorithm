@@ -1,0 +1,19 @@
+// Insertion Sort
+ALGORITHM insertion_sort
+VAR
+    leftHand : ARRAY_OF integer[5];
+    rightHand : ARRAY_OF integer[5];
+    
+BEGIN
+    FOR i FROM 0 TO leftHand.length-1 STEP 1  DO
+    // checking if array lefthand is empty 
+    IF (leftHand.length === 0) THEN
+        break
+    END_IF
+    up_one := leftHand[i+1]
+    IF (leftHand[i] > up_one) THEN
+        rightHand[up_one]
+    END_IF
+    END_FOR
+    write(rightHand)
+END
