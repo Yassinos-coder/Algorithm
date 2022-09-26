@@ -1,0 +1,46 @@
+ALGORITHM vectors_orthogonal
+
+PROCEDURE dot_product(ps :INTEGER, VAR v1: ARRAY_OF INTEGER[10]; v2 : ARRAY_OF INTEGER[10];)
+VAR
+    i,p : INTEGER
+    a,b : INTEGER
+    ps : INTEGER
+    isOrthogonal : BOOLEAN
+    x : INTEGER
+BEGIN
+    ps := 0
+    i,p := 0
+    FOR i FROM 0 TO v1.length-1 STEP 1 DO
+        FOR p FROM 0 TO v2.length-1 STEP 1  DO
+            x := v1[i] * v2[p]
+            ps := ps + x 
+        END_FOR
+    END_FOR
+    IF (ps := 0) THEN
+        write("vectors orthogonal")
+        isOrthogonal := true
+    ELSE
+        write("vectors  not orthogonal")
+        isOrthogonal := false
+    END_IF
+    IF (isOrthogonal := true) THEN
+        break
+    END_IF
+END
+
+
+VAR
+    v1 : ARRAY_OF INTEGER[10];
+    v2 : ARRAY_OF INTEGER[10];
+    data, data2,i : INTEGER
+BEGIN
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+        write("enter data to v1")
+        read(v1[data])
+    END_FOR
+    FOR i FROM 0 TO v2.length-1 STEP 1  DO
+        write("enter data to v2")
+        read(v2[data])
+    END_FOR
+    dot_product(v1,v2)
+END
